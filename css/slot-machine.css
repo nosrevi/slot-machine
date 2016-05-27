@@ -107,85 +107,42 @@ body {
   -webkit-pointer-events: none;
 }
 
-#startFlag:checked + #start {
-  opacity: 0;
-  pointer-events: none;
-  -webkit-pointer-events: none;
-}
-
 #end {
   opacity: 0;
   pointer-events: none;
   -webkit-pointer-events: none;
 }
-#startFlag {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-}
-#startFlag:checked + #start {
+
+.rs {
   opacity: 0;
-  pointer-events: none;
-  -webkit-pointer-events: none;
 }
+
 #container {
   background: -webkit-linear-gradient(top, #8adcf7 0%, #bbe8fd 100%);
   background: linear-gradient(to bottom, #8adcf7 0%, #bbe8fd 100%);
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -300px;
+  margin-left: -400px;
   margin-top: -300px;
-  width: 600px;
+  width: 800px;
   height: 600px;
   border: 1px solid #000;
   overflow: hidden;
 }
-#map {
+#table {
   position: absolute;
   bottom: 0;
-  left: -600px;
-  width: 1800px;
-  height: 800px;
+  left: -180px;
+  width: 1200px;
+  height: 600px;
+  background-color: gold;
+  border-radius: 20px;
   -webkit-transform: perspective(600px) rotateX(45deg);
           transform: perspective(600px) rotateX(45deg);
   -webkit-transform-origin: center bottom;
       -ms-transform-origin: center bottom;
           transform-origin: center bottom;
-}
-.map {
-  width: 5%;
-  height: 100%;
-  float: left;
-}
-.map:nth-child(even) {
-  background: #62b210;
-}
-.map:nth-child(odd) {
-  background: #51a70d;
-}
-.hole {
-  position: absolute;
-  left: 0;
-  top: 70px;
-  width: 68px;
-  height: 100px;
-  background-image: -webkit-linear-gradient(left, #2a7d2f 0%, #78fc73 25%, #78fc73 35%, #113e15 95%);
-  background-image: linear-gradient(to right, #2a7d2f 0%, #78fc73 25%, #78fc73 35%, #113e15 95%);
-  border-left: 1px solid #236d22;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.6);
-}
-.hole:before {
-  display: block;
-  content: '';
-  position: absolute;
-  width: 84px;
-  height: 24px;
-  margin-left: -8px;
-  top: -24px;
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.3) 2px, rgba(255, 255, 255, 0.3) 3px, rgba(255, 255, 255, 0) 4px), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.4) 3px, rgba(255, 255, 255, 0.2) 5px, rgba(255, 255, 255, 0) 6px), -webkit-linear-gradient(left, #2a7d2f 0%, #78fc73 25%, #78fc73 35%, #113e15 95%);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.3) 2px, rgba(255, 255, 255, 0.3) 3px, rgba(255, 255, 255, 0) 4px), linear-gradient(to top, rgba(0, 0, 0, 0.4) 3px, rgba(255, 255, 255, 0.2) 5px, rgba(255, 255, 255, 0) 6px), linear-gradient(to right, #2a7d2f 0%, #78fc73 25%, #78fc73 35%, #113e15 95%);
-  border-radius: 2px;
 }
 .gopher {
   z-index: 0;
@@ -231,21 +188,33 @@ body {
   -moz-apperance: none;
   appearance: none;
 }
-.reel {
+.machine {
+  width: 500px;
+  height: 500px;
+  top: 100px;
+  left: 150px;
+  border: solid white 20px;
+  background-color: black;
+  border-radius: 15px 15px 0 0;
+  transform: translateZ(250px);
+  position: absolute;
+}
+.upper-panel {
+  /*border-radius: 25px;*/
   position: absolute;
   z-index: 1;
+  width: 100%;
+  height: 150px;
+  background-color: black;
 }
-.reel:nth-child(1) {
-  left: 45px;
-  top: 210px;
-}
-.reel:nth-child(2) {
-  left: 195px;
-  top: 210px;
-}
-.reel:nth-child(3) {
-  left: 345px;
-  top: 210px;
+.lower-panel {
+  /*border-radius: 25px;*/
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin-top: 320px;
+  height: 200px;
+  background-color: black;
 }
 .gopher:checked {
   -webkit-animation-name: none;
@@ -255,10 +224,12 @@ body {
   opacity: 0;
   overflow: hidden;
 }
-.carousel {
-      width: 150px;
-      height: 170px;
-      z-index: 2;
+.reel {
+      width: 140px;
+      height: 150px;
+      margin-top: 160px;
+      margin-left: 10px;
+      float: left;
       /*position: absolute;*/
       /*-webkit-transform: translateZ( -233px );
          -moz-transform: translateZ( -233px );
@@ -268,100 +239,89 @@ body {
          -moz-transform-style: preserve-3d;
            -o-transform-style: preserve-3d;
               transform-style: preserve-3d;
-      -webkit-transition: -webkit-transform 1s;
+      /*-webkit-transition: -webkit-transform 1s;
          -moz-transition: -moz-transform 1s;
            -o-transition: -o-transform 1s;
-              transition: transform 1s;
-      animation: spin 4s linear;
+              transition: transform 1s;*/
+      /*animation: spin 4s linear;*/
     }
-    .carousel figure {
+    .reel figure {
       display: block;
       position: absolute;
-      width: 150px;
-      height: 160px;
-      left: 10px;
-      top: 10px;
+      width: 140px;
+      height: 150px;
+      /*left: 10px;
+      top: 10px;*/
       border: 2px solid black;
+      border-radius: 15px;
       line-height: 116px;
-      font-size: 80px;
+      /*font-size: 80px;*/
       font-weight: bold;
       color: white;
       text-align: center;
     }
-    .carousel figure:nth-child(1) { background: hsla(   0, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(2) { background: hsla(  40, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(3) { background: hsla(  80, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(4) { background: hsla( 120, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(5) { background: hsla( 160, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(6) { background: hsla( 200, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(7) { background: hsla( 240, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(8) { background: hsla( 280, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(9) { background: hsla( 320, 100%, 50%, 0.8 ); }
-    .carousel figure:nth-child(1) {
-      -webkit-transform: rotateX(   0deg ) translateZ( 233px );
-         -moz-transform: rotateX(   0deg ) translateZ( 233px );
-           -o-transform: rotateX(   0deg ) translateZ( 233px );
-              transform: rotateX(   0deg ) translateZ( 233px );
+    .reel figure.coffee-maker { background: hsla(  30, 100%, 30%, 1 ); }
+    .reel figure.teapot { background: hsla(  120, 50%, 70%, 1 ); }
+    .reel figure.espresso-machine { background: hsla(  31, 100%, 60%, 1 ); }
+    .reel figure.coffee-filter { background: hsla( 30, 100%, 30%, 1 ); }
+    .reel figure.tea-strainer { background: hsla( 120, 50%, 70%, 1 ); }
+    .reel figure.tamper { background: hsla( 31, 100%, 60%, 1 ); }
+    .reel figure.coffee-grounds { background: hsla( 30, 100%, 30%, 1 ); }
+    .reel figure.tea { background: hsla( 120, 50%, 70%, 1 ); }
+    .reel figure.beans { background: hsla( 31, 100%, 60%, 1 ); }
+    .reel figure:nth-child(1) {
+      -webkit-transform: rotateX(   0deg ) translateZ( 206px );
+         -moz-transform: rotateX(   0deg ) translateZ( 206px );
+           -o-transform: rotateX(   0deg ) translateZ( 206px );
+              transform: rotateX(   0deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(2) {
-      -webkit-transform: rotateX(  40deg ) translateZ( 233px );
-         -moz-transform: rotateX(  40deg ) translateZ( 233px );
-           -o-transform: rotateX(  40deg ) translateZ( 233px );
-              transform: rotateX(  40deg ) translateZ( 233px );
+    .reel figure:nth-child(2) {
+      -webkit-transform: rotateX(  40deg ) translateZ( 206px );
+         -moz-transform: rotateX(  40deg ) translateZ( 206px );
+           -o-transform: rotateX(  40deg ) translateZ( 206px );
+              transform: rotateX(  40deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(3) {
-      -webkit-transform: rotateX(  80deg ) translateZ( 233px );
-         -moz-transform: rotateX(  80deg ) translateZ( 233px );
-           -o-transform: rotateX(  80deg ) translateZ( 233px );
-              transform: rotateX(  80deg ) translateZ( 233px );
+    .reel figure:nth-child(3) {
+      -webkit-transform: rotateX(  80deg ) translateZ( 206px );
+         -moz-transform: rotateX(  80deg ) translateZ( 206px );
+           -o-transform: rotateX(  80deg ) translateZ( 206px );
+              transform: rotateX(  80deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(4) {
-      -webkit-transform: rotateX( 120deg ) translateZ( 233px );
-         -moz-transform: rotateX( 120deg ) translateZ( 233px );
-           -o-transform: rotateX( 120deg ) translateZ( 233px );
-              transform: rotateX( 120deg ) translateZ( 233px );
+    .reel figure:nth-child(4) {
+      -webkit-transform: rotateX( 120deg ) translateZ( 206px );
+         -moz-transform: rotateX( 120deg ) translateZ( 206px );
+           -o-transform: rotateX( 120deg ) translateZ( 206px );
+              transform: rotateX( 120deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(5) {
-      -webkit-transform: rotateX( 160deg ) translateZ( 233px );
-         -moz-transform: rotateX( 160deg ) translateZ( 233px );
-           -o-transform: rotateX( 160deg ) translateZ( 233px );
-              transform: rotateX( 160deg ) translateZ( 233px );
+    .reel figure:nth-child(5) {
+      -webkit-transform: rotateX( 160deg ) translateZ( 206px );
+         -moz-transform: rotateX( 160deg ) translateZ( 206px );
+           -o-transform: rotateX( 160deg ) translateZ( 206px );
+              transform: rotateX( 160deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(6) {
-      -webkit-transform: rotateX( 200deg ) translateZ( 233px );
-         -moz-transform: rotateX( 200deg ) translateZ( 233px );
-           -o-transform: rotateX( 200deg ) translateZ( 233px );
-              transform: rotateX( 200deg ) translateZ( 233px );
+    .reel figure:nth-child(6) {
+      -webkit-transform: rotateX( 200deg ) translateZ( 206px );
+         -moz-transform: rotateX( 200deg ) translateZ( 206px );
+           -o-transform: rotateX( 200deg ) translateZ( 206px );
+              transform: rotateX( 200deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(7) {
-      -webkit-transform: rotateX( 240deg ) translateZ( 233px );
-         -moz-transform: rotateX( 240deg ) translateZ( 233px );
-           -o-transform: rotateX( 240deg ) translateZ( 233px );
-              transform: rotateX( 240deg ) translateZ( 233px );
+    .reel figure:nth-child(7) {
+      -webkit-transform: rotateX( 240deg ) translateZ( 206px );
+         -moz-transform: rotateX( 240deg ) translateZ( 206px );
+           -o-transform: rotateX( 240deg ) translateZ( 206px );
+              transform: rotateX( 240deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(8) {
-      -webkit-transform: rotateX( 280deg ) translateZ( 233px );
-         -moz-transform: rotateX( 280deg ) translateZ( 233px );
-           -o-transform: rotateX( 280deg ) translateZ( 233px );
-              transform: rotateX( 280deg ) translateZ( 233px );
+    .reel figure:nth-child(8) {
+      -webkit-transform: rotateX( 280deg ) translateZ( 206px );
+         -moz-transform: rotateX( 280deg ) translateZ( 206px );
+           -o-transform: rotateX( 280deg ) translateZ( 206px );
+              transform: rotateX( 280deg ) translateZ( 206px );
     }
-    .carousel figure:nth-child(9) {
-      -webkit-transform: rotateX( 320deg ) translateZ( 233px );
-         -moz-transform: rotateX( 320deg ) translateZ( 233px );
-           -o-transform: rotateX( 320deg ) translateZ( 233px );
-              transform: rotateX( 320deg ) translateZ( 233px );
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotateX(0deg);
-      }
-      90% {
-        transform: rotateX(-680deg);
-      }
-      100% {
-        transform: rotateX(-720deg);
-      }
+    .reel figure:nth-child(9) {
+      -webkit-transform: rotateX( 320deg ) translateZ( 206px );
+         -moz-transform: rotateX( 320deg ) translateZ( 206px );
+           -o-transform: rotateX( 320deg ) translateZ( 206px );
+              transform: rotateX( 320deg ) translateZ( 206px );
     }
 
 .gopher1 {
@@ -403,84 +363,6 @@ body {
   }
   100% {
     top: -170px;
-  }
-}
-.gopher3 {
-  -webkit-animation-name: gopher3;
-          animation-name: gopher3;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-}
-@-webkit-keyframes gopher3 {
-  0% {
-    top: 70px;
-  }
-  30% {
-    top: 70px;
-  }
-  60% {
-    top: 0;
-  }
-  70% {
-    top: 0;
-  }
-  90% {
-    top: 70px;
-  }
-}
-@keyframes gopher3 {
-  0% {
-    top: 70px;
-  }
-  30% {
-    top: 70px;
-  }
-  60% {
-    top: 0;
-  }
-  70% {
-    top: 0;
-  }
-  90% {
-    top: 70px;
-  }
-}
-.gopher4 {
-  -webkit-animation-name: gopher4;
-          animation-name: gopher4;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-duration: 8s;
-          animation-duration: 8s;
-}
-@-webkit-keyframes gopher4 {
-  0% {
-    top: 70px;
-  }
-  10% {
-    top: 70px;
-  }
-  15% {
-    top: 0;
-  }
-  30% {
-    top: 70px;
-  }
-}
-@keyframes gopher4 {
-  0% {
-    top: 70px;
-  }
-  10% {
-    top: 70px;
-  }
-  15% {
-    top: 0;
-  }
-  30% {
-    top: 70px;
   }
 }
 .rs:checked ~ .points {
@@ -535,39 +417,328 @@ body {
   font-weight: bold;
   cursor: default;
 }
-.time-wrapper {
-  position: absolute;
-  left: -150px;
-  top: 20px;
-  -webkit-transition: 1s;
-          transition: 1s;
-}
-.time-wrapper p {
-  color: #fff;
-  line-height: 24px;
-}
-.time {
-  border: 2px solid #fff;
-  width: 140px;
-  height: 20px;
-}
-.time .progress {
-  height: 16px;
-  width: 0;
-}
-/*#startFlag:checked ~ .time-wrapper .progress {*/
-.rs:checked ~ .time-wrapper .progress {*/
-  -webkit-animation: progress 215s linear 0s forwards;
-          animation: progress 215s linear 0s forwards;
-}
 /*#startFlag:checked ~ #end {*/
-.rs:checked ~ #end {*/
-  -webkit-animation: end 216s linear 0s forwards;
-          animation: end 216s linear 0s forwards;
+.rs:checked ~ #end {
+  -webkit-animation: end 8s linear 0s forwards;
+          animation: end 8s linear 0s forwards;
 }
-/*#startFlag:checked ~ .time-wrapper {*/
-.rs:checked ~ .time-wrapper {
-  left: 20px;
+
+#rand1:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand1:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand1:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+/*winner*/
+#rand2:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand2:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand2:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand3:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand3:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand3:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand4:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand4:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand4:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand5:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand5:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand5:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand6:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand6:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand6:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand7:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand7:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand7:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand8:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand8:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand8:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand9:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand9:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand9:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand10:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand10:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand10:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand11:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand11:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand11:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand12:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand12:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand12:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand13:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand13:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand13:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+/*winner*/
+#rand14:checked ~ .machine #reel1 {
+    animation: spin3 8s linear;
+}
+#rand14:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand14:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+/*winner*/
+#rand15:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand15:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand15:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand16:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand16:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand16:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand17:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand17:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand17:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand18:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand18:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand18:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand19:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand19:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand19:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand20:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand20:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand20:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand21:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand21:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand21:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand22:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand22:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand22:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand23:checked ~ .machine #reel1 {
+    animation: spin1 8s linear;
+}
+#rand23:checked ~ .machine #reel2 {
+    animation: spin3 8s linear;
+}
+#rand23:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand24:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand24:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand24:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+#rand25:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand25:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand25:checked ~ .machine #reel3 {
+    animation: spin2 8s linear;
+}
+
+#rand26:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand26:checked ~ .machine #reel2 {
+    animation: spin1 8s linear;
+}
+#rand26:checked ~ .machine #reel3 {
+    animation: spin3 8s linear;
+}
+
+#rand27:checked ~ .machine #reel1 {
+    animation: spin2 8s linear;
+}
+#rand27:checked ~ .machine #reel2 {
+    animation: spin2 8s linear;
+}
+#rand27:checked ~ .machine #reel3 {
+    animation: spin1 8s linear;
+}
+
+@keyframes spin1 {
+  0% {
+    transform: rotateX(0deg);
+  }
+  60% {
+    transform: rotateX(-640deg);
+  }
+  80% {
+    transform: rotateX(-720deg);
+  }
+  100% {
+    transform: rotateX(-720deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotateX(40deg);
+  }
+  60% {
+    transform: rotateX(-600deg);
+  }
+  80% {
+    transform: rotateX(-680deg);
+  }
+  100% {
+    transform: rotateX(-680deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotateX(80deg);
+  }
+  60% {
+    transform: rotateX(-560deg);
+  }
+  80% {
+    transform: rotateX(-640deg);
+  }
+  100% {
+    transform: rotateX(-640deg);
+  }
 }
 @-webkit-keyframes progress {
   from {

@@ -9,7 +9,6 @@
   </head>
   <body>
     <div id="container">
-      <input id="startFlag" type="checkbox">
       <input type="checkbox" id="rand1" class="rs">
       <input type="checkbox" id="rand2" class="rs">
       <input type="checkbox" id="rand3" class="rs">
@@ -38,7 +37,7 @@
       <input type="checkbox" id="rand26" class="rs">
       <input type="checkbox" id="rand27" class="rs">
       <div id="start" class="window">
-        <h1>Want a free drink?</h1>
+        <h1>Fancy a free drink?</h1>
         <p>Pull the lever now!</p>
         <div class="btn-group">
           <div class="gopher gopher--not-button"></div>
@@ -77,114 +76,58 @@
         <!-- <input id="random" type="radio" name="target1" class="gopher gopher1"> -->
       </div>
       <div id="end" class="window">
-        <h2>Game Over</h2>
-        <p>壮士欢迎从头再来</p>
-        <p class="meta">按 F5/Command R 重来</p>
+        <h2>Hmmm... maybe next time</h2>
+        <p class="meta">Press F5/Command R to play again!</p>
         <div class="gopher gopher--not-button"></div>
       </div>
-      <div class="time-wrapper">
-        <p>游戏时间：</p>
-        <div class="time">
-          <div class="progress"></div>
-        </div>
-      </div>
-      <div id="map">
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
-        <div class="map"></div>
+      <div id="table">
       </div>
       <div class="machine">
-        <div class="reel">
-          <div class="carousel" type="radio" name="target1">
-            <figure>1</figure>
-            <figure>2</figure>
-            <figure>3</figure>
-            <figure>4</figure>
-            <figure>5</figure>
-            <figure>6</figure>
-            <figure>7</figure>
-            <figure>8</figure>
-            <figure>9</figure>
+          <div class="reel" id="reel1">
+            <figure class="coffee-maker">coffee maker</figure>
+            <figure class="teapot">teapot</figure>
+            <figure class="espresso-machine">espresso machine</figure>
+            <figure class="coffee-maker">coffee maker</figure>
+            <figure class="teapot">teapot</figure>
+            <figure class="espresso-machine">espresso machine</figure>
+            <figure class="coffee-maker">coffee maker</figure>
+            <figure class="teapot">teapot</figure>
+            <figure class="espresso-machine">espresso machine</figure>
           </div>
-          <!-- <input type="radio" name="target1" class="gopher gopher1"> -->
-          <!-- <div class="hole"></div> -->
+          <div class="reel" id="reel2">
+            <figure class="coffee-filter">coffee filter</figure>
+            <figure class="tea-strainer">tea strainer</figure>
+            <figure class="tamper">tamper</figure>
+            <figure class="coffee-filter">coffee filter</figure>
+            <figure class="tea-strainer">tea strainer</figure>
+            <figure class="tamper">tamper</figure>
+            <figure class="coffee-filter">coffee filter</figure>
+            <figure class="tea-strainer">tea strainer</figure>
+            <figure class="tamper">tamper</figure>
+          </div>
+          <div class="reel" id="reel3">
+            <figure class="coffee-grounds">coffee grounds</figure>
+            <figure class="tea">tea</figure>
+            <figure class="beans">beans</figure>
+            <figure class="coffee-grounds">coffee grounds</figure>
+            <figure class="tea">tea</figure>
+            <figure class="beans">beans</figure>
+            <figure class="coffee-grounds">coffee grounds</figure>
+            <figure class="tea">tea</figure>
+            <figure class="beans">beans</figure>
+          </div>
+        <div class="upper-panel">
         </div>
-        <div class="reel">
-          <div class="carousel" type="radio" name="target1">
-            <figure>1</figure>
-            <figure>2</figure>
-            <figure>3</figure>
-            <figure>4</figure>
-            <figure>5</figure>
-            <figure>6</figure>
-            <figure>7</figure>
-            <figure>8</figure>
-            <figure>9</figure>
-          </div>
-          <!-- <input type="radio" name="target3" class="gopher gopher3"> -->
-          <!-- <div class="hole"></div> -->
-        </div>
-        <div class="reel">
-          <div class="carousel" type="radio" name="target1">
-            <figure>1</figure>
-            <figure>2</figure>
-            <figure>3</figure>
-            <figure>4</figure>
-            <figure>5</figure>
-            <figure>6</figure>
-            <figure>7</figure>
-            <figure>8</figure>
-            <figure>9</figure>
-          </div>
-          <!-- <input type="radio" name="target4" class="gopher gopher4"> -->
-          <!-- <div class="hole"></div> -->
+        <div class="lower-panel">
         </div>
       </div>
       <div class="points">
         <div class="points-viewport">
           <div class="points-list">
             <input type="radio" checked name="target1">
-            <input type="radio" checked name="target2">
-            <input type="radio" checked name="target3">
-            <input type="radio" checked name="target4">
-            <input type="radio" checked name="target5">
-            <input type="radio" checked name="target6">
-            <input type="radio" checked name="target7">
-            <input type="radio" checked name="target8">
-            <input type="radio" checked name="target9">
-            <input type="radio" checked name="target10">
-            <input type="radio" checked name="target11">
-            <input type="radio" checked name="target12">
             <ul class="points-value">
               <li>12</li>
               <li>11</li>
-              <li>10</li>
-              <li>9</li>
-              <li>8</li>
-              <li>7</li>
-              <li>6</li>
-              <li>5</li>
-              <li>4</li>
-              <li>3</li>
-              <li>2</li>
-              <li>1</li>
-              <li>0</li>
             </ul>
           </div>
         </div>
