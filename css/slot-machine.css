@@ -12,13 +12,15 @@ body {
   background: #000;
   font-family: sans-serif;
 }
+
 .window {
   position: absolute;
   left: 0;
   top: 0;
+  padding-top: 200px;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
   z-index: 999;
   -webkit-transition: opacity 0.6s;
           transition: opacity 0.6s;
@@ -27,11 +29,8 @@ body {
 .window h2,
 .window p {
   color: #fff;
+  line-height: 50px;
   text-align: center;
-}
-.window h2 {
-  margin-top: 100px;
-  margin-bottom: 10px;
 }
 .window .meta {
   margin-top: 50px;
@@ -43,17 +42,11 @@ body {
 .window .btn-group {
   margin: 80px auto;
   width: 100px;
-  height: 90px;
+  height: 150px;
   overflow: hidden;
   position: relative;
 }
-.window .gopher {
-  position: relative;
-  top: 6px;
-  left: 0;
-  margin: 0 auto;
-}
-/*.window label {*/
+
 .start-btn {
   z-index:1;
   display: block;
@@ -62,18 +55,24 @@ body {
   left: 0;
   width: 100%;
   height: 40px;
-  background: #51a70d;
+  background: #bdb76b;
   color: #fff;
   text-align: center;
   line-height: 40px;
   cursor: pointer;
-  border-bottom: 4px solid #62b210;
+  border-bottom: 4px solid #f0e68c;
   border-radius: 4px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
+
+/*Since there is no direct way to generate random number in pure css,
+I use a list of transparent labels that moves horizontally at a speed.
+When user hits start button, he/she actually picks 1 of the 27 labels
+that happens to be hovering over the button.*/
+
 #random {
   z-index:2;
   position: absolute;
@@ -92,7 +91,6 @@ body {
 
 @keyframes backandforth {0%{left:-1300%;} 100%{left:50%;}}
 
-/*.window label.random-selection {*/
 #random label {
   position: relative;
   float:left;
@@ -101,20 +99,51 @@ body {
   cursor: pointer;
 }
 
-.rs:checked ~ #start{
+/*Once a label is clicked, one of the hidden rand-group checkbox is checked.
+Then the start screen disappears.*/
+.rand-group {
+  display: none;
+}
+.rand-group:checked ~ #start{
   opacity: 0;
   pointer-events: none;
   -webkit-pointer-events: none;
+}
+
+.lever {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  background-image: radial-gradient(circle at 33px 13px,#fff 18%,rgba(255,255,255,0) 5%);
+}
+.lever:before {
+  z-index: -1;
+  position: absolute;
+  content: '';
+  top: 20px;
+  left: 32px;
+  width: 10px;
+  height: 100px;
+  background-color: #fff;
+  border-left: solid #a9a9a9;
+  transform: rotate(-15deg);
 }
 
 #end {
-  opacity: 0;
-  pointer-events: none;
-  -webkit-pointer-events: none;
+  top: -800px;
+  opacity: 1;
+  display: block;
+  background: rgba(0, 0, 0, 1);
+  border-bottom: solid #a9a9a9;
 }
-
-.rs {
-  opacity: 0;
+#end h2{
+  display: none;
+}
+#end h2.lose{
+  display: block;
 }
 
 #container {
@@ -130,13 +159,15 @@ body {
   border: 1px solid #000;
   overflow: hidden;
 }
+
+/*Using css to drawing some stuff*/
 #table {
   position: absolute;
   bottom: 0;
   left: -180px;
   width: 1200px;
   height: 600px;
-  background-color: gold;
+  background-color: #daa520;
   border-radius: 20px;
   -webkit-transform: perspective(600px) rotateX(45deg);
           transform: perspective(600px) rotateX(45deg);
@@ -144,129 +175,109 @@ body {
       -ms-transform-origin: center bottom;
           transform-origin: center bottom;
 }
-.gopher {
-  z-index: 0;
+#cup {
+  z-index: 1;
   position: absolute;
-  display: block;
-  top: 70px;
-  left: 7px;
-  width: 56px;
-  height: 100px;
-  border-radius: 20px;
-  background: #e3c498;
-  background-image: -webkit-radial-gradient(20px 23px, circle, #000000 5%, rgba(255, 255, 255, 0) 5%), -webkit-radial-gradient(17px 20px, circle, #ffffff 10%, rgba(255, 255, 255, 0) 10%), -webkit-radial-gradient(40px 23px, circle, #000000 5%, rgba(255, 255, 255, 0) 5%), -webkit-radial-gradient(43px 20px, circle, #ffffff 10%, rgba(255, 255, 255, 0) 10%), -webkit-radial-gradient(center 36px, circle, #000000 8%, rgba(255, 255, 255, 0) 8%), -webkit-radial-gradient(center 48px, circle, #ffffff 20%, rgba(255, 255, 255, 0) 20%);
-  background-image: radial-gradient(circle at 20px 23px, #000000 5%, rgba(255, 255, 255, 0) 5%), radial-gradient(circle at 17px 20px, #ffffff 10%, rgba(255, 255, 255, 0) 10%), radial-gradient(circle at 40px 23px, #000000 5%, rgba(255, 255, 255, 0) 5%), radial-gradient(circle at 43px 20px, #ffffff 10%, rgba(255, 255, 255, 0) 10%), radial-gradient(circle at center 36px, #000000 8%, rgba(255, 255, 255, 0) 8%), radial-gradient(circle at center 48px, #ffffff 20%, rgba(255, 255, 255, 0) 20%);
-  -webkit-appearance: button;
-  -moz-apperance: button;
-  appearance: button;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-.gopher:before,
-.gopher:after {
-  z-index: -1;
   content: '';
-  left: -5px;
-  top: -5px;
-  width: 20px;
-  height: 20px;
+  top: 357px;
+  left: 37px;
+  width: 78px;
+  height: 56px;
+  border-radius: 0 0 40% 40%;
+  background-color: #fff;
+  border-left: solid #a9a9a9;
+}
+#cup:before {
+  z-index: 1;
   position: absolute;
-  background: #e3c498;
-  border-radius: 50%;
-  background-image: -webkit-radial-gradient(center, circle, #000000 40%, rgba(255, 255, 255, 0) 40%);
-  background-image: radial-gradient(circle at center, #000000 40%, rgba(255, 255, 255, 0) 40%);
+  content: '';
+  top: 5px;
+  left: -16px;
+  width: 57px;
+  height: 38px;
+  border-radius: 44%;
+  background-image: radial-gradient(circle at 15px 18px, rgba(255,255,255,0) 18%, white 5%);
 }
-.gopher:after {
-  left: auto;
-  right: -5px;
+#cup:after{
+  z-index: 1;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 26px;
+  width: 43px;
+  height: 45px;
+  border-bottom-right-radius: 20px;
+  border-right: solid #d3d3d3;
 }
-.gopher--not-button {
-  -webkit-appearance: none;
-  -moz-apperance: none;
-  appearance: none;
-}
+
 .machine {
   width: 500px;
   height: 500px;
   top: 100px;
   left: 150px;
-  border: solid white 20px;
-  background-color: black;
+  border: solid #fff4b5 20px;
+  background-color: #fff8dc;
   border-radius: 15px 15px 0 0;
   transform: translateZ(250px);
   position: absolute;
 }
-.upper-panel {
-  /*border-radius: 25px;*/
+#panel {
+  width: 640px;
+  height: 300px;
+  top: 300px;
+  left: -87px;
+  border: solid #fff4b5;
+  border-width: 100px 20px;
+  background-color: #fff8dc;
+  border-radius: 15px 15px 0 0;
+  transform: perspective(600px) rotateX(31deg);
   position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 150px;
-  background-color: black;
 }
-.lower-panel {
-  /*border-radius: 25px;*/
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  margin-top: 320px;
-  height: 200px;
-  background-color: black;
-}
-.gopher:checked {
-  -webkit-animation-name: none;
-          animation-name: none;
-  pointer-events: none;
-  -webkit-pointer-events: none;
-  opacity: 0;
+.viewport {
+  border-radius: 10px;
+  position: relative;
   overflow: hidden;
+  width: 440px;
+  margin-top: 100px;
+  margin-left: 10px;
+  height: 159px;
+  z-index: 1;
+  box-shadow: 5px 5px #157;
 }
+
+/*reels actually spin in 3D, echo reel has 9 faces*/
 .reel {
       width: 140px;
       height: 150px;
-      margin-top: 160px;
-      margin-left: 10px;
+      margin-top: 5px;
       float: left;
-      /*position: absolute;*/
-      /*-webkit-transform: translateZ( -233px );
-         -moz-transform: translateZ( -233px );
-           -o-transform: translateZ( -233px );
-              transform: translateZ( -233px );*/
       -webkit-transform-style: preserve-3d;
          -moz-transform-style: preserve-3d;
            -o-transform-style: preserve-3d;
               transform-style: preserve-3d;
-      /*-webkit-transition: -webkit-transform 1s;
-         -moz-transition: -moz-transform 1s;
-           -o-transition: -o-transform 1s;
-              transition: transform 1s;*/
-      /*animation: spin 4s linear;*/
+    }
+    .reel.reel-margin {
+      margin-left: 10px;
     }
     .reel figure {
       display: block;
       position: absolute;
       width: 140px;
       height: 150px;
-      /*left: 10px;
-      top: 10px;*/
-      border: 2px solid black;
       border-radius: 15px;
-      line-height: 116px;
-      /*font-size: 80px;*/
+      line-height: 136px;
       font-weight: bold;
-      color: white;
+      color: #fff;
       text-align: center;
     }
+    .reel figure p { line-height: 30px; margin-top: 40px; }
     .reel figure.coffee-maker { background: hsla(  30, 100%, 30%, 1 ); }
     .reel figure.teapot { background: hsla(  120, 50%, 70%, 1 ); }
     .reel figure.espresso-machine { background: hsla(  31, 100%, 60%, 1 ); }
     .reel figure.coffee-filter { background: hsla( 30, 100%, 30%, 1 ); }
     .reel figure.tea-strainer { background: hsla( 120, 50%, 70%, 1 ); }
     .reel figure.tamper { background: hsla( 31, 100%, 60%, 1 ); }
-    .reel figure.coffee-grounds { background: hsla( 30, 100%, 30%, 1 ); }
+    .reel figure.coffee-grounds { line-height: 70px;background: hsla( 30, 100%, 30%, 1 ); }
     .reel figure.tea { background: hsla( 120, 50%, 70%, 1 ); }
     .reel figure.beans { background: hsla( 31, 100%, 60%, 1 ); }
     .reel figure:nth-child(1) {
@@ -324,105 +335,38 @@ body {
               transform: rotateX( 320deg ) translateZ( 206px );
     }
 
-.gopher1 {
-  /*-webkit-animation-name: gopher1;
-          animation-name: gopher1;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;*/
-  -webkit-animation: gopher1 1s linear infinite;
-  animation: gopher1 1s linear infinite;
-}
-@-webkit-keyframes gopher1 {
-  0% {
-    top: 70px;
-  }
-  10% {
-    top: 0;
-  }
-  20% {
-    top: 70px;
-  }
-  30% {
-    top: 0;
-  }
-  40% {
-    top: 70px;
-  }
-  50% {
-    top: 0;
-  }
-  100% {
-    top: 70px;
-  }
-}
-@keyframes gopher1 {
-  0% {
-    top: 70px;
-  }
-  100% {
-    top: -170px;
-  }
-}
-.rs:checked ~ .points {
-  top: 20px;
-}
-.points {
-  -webkit-transition: top 1s;
-          transition: top 1s;
-  position: absolute;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  top: -100px;
-  left: 50%;
-  width: 100px;
-  height: 48px;
-  margin-left: -50px;
-  background: rgba(0, 0, 0, 0.2);
-  border: 4px solid #ffffff;
-  border-radius: 4px;
-  color: #fff;
-}
-.points .points-viewport {
-  overflow: hidden;
-  height: 40px;
-  width: 100%;
-}
-.points .points-list {
-  position: relative;
-  top: -480px;
-}
-.points input {
-  display: block;
-  height: 40px;
-  -webkit-transition: 1s;
-          transition: 1s;
-}
-.points input:checked {
-  height: 0;
-}
-.points ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.points li {
-  display: block;
-  height: 40px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: default;
-}
-/*#startFlag:checked ~ #end {*/
-.rs:checked ~ #end {
+/*end animation starts after reels spin for 8s*/
+.rand-group:checked ~ #end {
   -webkit-animation: end 8s linear 0s forwards;
           animation: end 8s linear 0s forwards;
 }
 
+@-webkit-keyframes end {
+  from {
+    top: -800px;
+  }
+  95% {
+    top: -800px;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes end {
+  from {
+    top: -800px;
+  }
+  95% {
+    top: -800px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+/*Each reel has 3 choices, we have 27 possible results in total,
+which maps to 27 checkboxes. Spin1, 2 and 3 maps to 3 different
+choices on each reel.*/
 #rand1:checked ~ .machine #reel1 {
     animation: spin3 8s linear;
 }
@@ -433,7 +377,6 @@ body {
     animation: spin3 8s linear;
 }
 
-/*winner*/
 #rand2:checked ~ .machine #reel1 {
     animation: spin2 8s linear;
 }
@@ -534,6 +477,8 @@ body {
     animation: spin3 8s linear;
 }
 
+/*winner - espresso*/
+
 #rand12:checked ~ .machine #reel1 {
     animation: spin3 8s linear;
 }
@@ -542,6 +487,12 @@ body {
 }
 #rand12:checked ~ .machine #reel3 {
     animation: spin1 8s linear;
+}
+#rand12:checked ~ #end h2.win-tea{
+    display: block;
+}
+#rand12:checked ~ #end h2.lose{
+    display: none;
 }
 
 #rand13:checked ~ .machine #reel1 {
@@ -554,7 +505,6 @@ body {
     animation: spin2 8s linear;
 }
 
-/*winner*/
 #rand14:checked ~ .machine #reel1 {
     animation: spin3 8s linear;
 }
@@ -565,7 +515,6 @@ body {
     animation: spin3 8s linear;
 }
 
-/*winner*/
 #rand15:checked ~ .machine #reel1 {
     animation: spin1 8s linear;
 }
@@ -606,6 +555,7 @@ body {
     animation: spin1 8s linear;
 }
 
+/*winner - coffee*/
 #rand19:checked ~ .machine #reel1 {
     animation: spin1 8s linear;
 }
@@ -614,6 +564,12 @@ body {
 }
 #rand19:checked ~ .machine #reel3 {
     animation: spin2 8s linear;
+}
+#rand19:checked ~ #end h2.win-coffee{
+    display: block;
+}
+#rand19:checked ~ #end h2.lose{
+    display: none;
 }
 
 #rand20:checked ~ .machine #reel1 {
@@ -676,6 +632,8 @@ body {
     animation: spin2 8s linear;
 }
 
+/*winner - tea*/
+
 #rand26:checked ~ .machine #reel1 {
     animation: spin2 8s linear;
 }
@@ -684,6 +642,12 @@ body {
 }
 #rand26:checked ~ .machine #reel3 {
     animation: spin3 8s linear;
+}
+#rand26:checked ~ #end h2.win-tea{
+    display: block;
+}
+#rand26:checked ~ #end h2.lose{
+    display: none;
 }
 
 #rand27:checked ~ .machine #reel1 {
@@ -713,6 +677,21 @@ body {
 
 @keyframes spin2 {
   0% {
+    transform: rotateX(-40deg);
+  }
+  60% {
+    transform: rotateX(600deg);
+  }
+  80% {
+    transform: rotateX(680deg);
+  }
+  100% {
+    transform: rotateX(680deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
     transform: rotateX(40deg);
   }
   60% {
@@ -723,75 +702,5 @@ body {
   }
   100% {
     transform: rotateX(-680deg);
-  }
-}
-
-@keyframes spin3 {
-  0% {
-    transform: rotateX(80deg);
-  }
-  60% {
-    transform: rotateX(-560deg);
-  }
-  80% {
-    transform: rotateX(-640deg);
-  }
-  100% {
-    transform: rotateX(-640deg);
-  }
-}
-@-webkit-keyframes progress {
-  from {
-    width: 0;
-    background: #00ff00;
-  }
-  to {
-    width: 136px;
-    background: #ff0000;
-  }
-}
-@keyframes progress {
-  from {
-    width: 0;
-    background: #00ff00;
-  }
-  to {
-    width: 136px;
-    background: #ff0000;
-  }
-}
-#end {
-  top: -800px;
-  opacity: 1;
-  display: block;
-  border-bottom: 2px solid #fff;
-}
-#end .gopher {
-  position: absolute;
-  left: 50%;
-  top: auto;
-  margin-left: -30px;
-  bottom: -54px;
-}
-@-webkit-keyframes end {
-  from {
-    top: -800px;
-  }
-  95% {
-    top: -800px;
-  }
-  to {
-    top: 0;
-  }
-}
-@keyframes end {
-  from {
-    top: -800px;
-  }
-  95% {
-    top: -800px;
-  }
-  to {
-    top: 0;
   }
 }

@@ -4,133 +4,126 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Have a drink!</title>
+    <title>Espresso Bar Slot Machine</title>
     <link rel="stylesheet" href="css/slot-machine.css">
   </head>
   <body>
     <div id="container">
-      <input type="checkbox" id="rand1" class="rs">
-      <input type="checkbox" id="rand2" class="rs">
-      <input type="checkbox" id="rand3" class="rs">
-      <input type="checkbox" id="rand4" class="rs">
-      <input type="checkbox" id="rand5" class="rs">
-      <input type="checkbox" id="rand6" class="rs">
-      <input type="checkbox" id="rand7" class="rs">
-      <input type="checkbox" id="rand8" class="rs">
-      <input type="checkbox" id="rand9" class="rs">
-      <input type="checkbox" id="rand10" class="rs">
-      <input type="checkbox" id="rand11" class="rs">
-      <input type="checkbox" id="rand12" class="rs">
-      <input type="checkbox" id="rand13" class="rs">
-      <input type="checkbox" id="rand14" class="rs">
-      <input type="checkbox" id="rand15" class="rs">
-      <input type="checkbox" id="rand16" class="rs">
-      <input type="checkbox" id="rand17" class="rs">
-      <input type="checkbox" id="rand18" class="rs">
-      <input type="checkbox" id="rand19" class="rs">
-      <input type="checkbox" id="rand20" class="rs">
-      <input type="checkbox" id="rand21" class="rs">
-      <input type="checkbox" id="rand22" class="rs">
-      <input type="checkbox" id="rand23" class="rs">
-      <input type="checkbox" id="rand24" class="rs">
-      <input type="checkbox" id="rand25" class="rs">
-      <input type="checkbox" id="rand26" class="rs">
-      <input type="checkbox" id="rand27" class="rs">
+      <input type="checkbox" id="rand1" class="rand-group">
+      <input type="checkbox" id="rand2" class="rand-group">
+      <input type="checkbox" id="rand3" class="rand-group">
+      <input type="checkbox" id="rand4" class="rand-group">
+      <input type="checkbox" id="rand5" class="rand-group">
+      <input type="checkbox" id="rand6" class="rand-group">
+      <input type="checkbox" id="rand7" class="rand-group">
+      <input type="checkbox" id="rand8" class="rand-group">
+      <input type="checkbox" id="rand9" class="rand-group">
+      <input type="checkbox" id="rand10" class="rand-group">
+      <input type="checkbox" id="rand11" class="rand-group">
+      <input type="checkbox" id="rand12" class="rand-group">
+      <input type="checkbox" id="rand13" class="rand-group">
+      <input type="checkbox" id="rand14" class="rand-group">
+      <input type="checkbox" id="rand15" class="rand-group">
+      <input type="checkbox" id="rand16" class="rand-group">
+      <input type="checkbox" id="rand17" class="rand-group">
+      <input type="checkbox" id="rand18" class="rand-group">
+      <input type="checkbox" id="rand19" class="rand-group">
+      <input type="checkbox" id="rand20" class="rand-group">
+      <input type="checkbox" id="rand21" class="rand-group">
+      <input type="checkbox" id="rand22" class="rand-group">
+      <input type="checkbox" id="rand23" class="rand-group">
+      <input type="checkbox" id="rand24" class="rand-group">
+      <input type="checkbox" id="rand25" class="rand-group">
+      <input type="checkbox" id="rand26" class="rand-group">
+      <input type="checkbox" id="rand27" class="rand-group">
       <div id="start" class="window">
         <h1>Fancy a free drink?</h1>
         <p>Pull the lever now!</p>
         <div class="btn-group">
-          <div class="gopher gopher--not-button"></div>
-          <!-- <label for="startFlag">Start</label> -->
+          <div class="lever"></div>
           <div class="start-btn">Go!</div>
-        <div id="random">
-          <label for="rand1"></label>
-          <label for="rand2"></label>
-          <label for="rand3"></label>
-          <label for="rand4"></label>
-          <label for="rand5"></label>
-          <label for="rand6"></label>
-          <label for="rand7"></label>
-          <label for="rand8"></label>
-          <label for="rand9"></label>
-          <label for="rand10"></label>
-          <label for="rand11"></label>
-          <label for="rand12"></label>
-          <label for="rand13"></label>
-          <label for="rand14"></label>
-          <label for="rand15"></label>
-          <label for="rand16"></label>
-          <label for="rand17"></label>
-          <label for="rand18"></label>
-          <label for="rand19"></label>
-          <label for="rand20"></label>
-          <label for="rand21"></label>
-          <label for="rand22"></label>
-          <label for="rand23"></label>
-          <label for="rand24"></label>
-          <label for="rand25"></label>
-          <label for="rand26"></label>
-          <label for="rand27"></label>
+          <div id="random">
+            <label for="rand1"></label>
+            <label for="rand2"></label>
+            <label for="rand3"></label>
+            <label for="rand4"></label>
+            <label for="rand5"></label>
+            <label for="rand6"></label>
+            <label for="rand7"></label>
+            <label for="rand8"></label>
+            <label for="rand9"></label>
+            <label for="rand10"></label>
+            <label for="rand11"></label>
+            <label for="rand12"></label>
+            <label for="rand13"></label>
+            <label for="rand14"></label>
+            <label for="rand15"></label>
+            <label for="rand16"></label>
+            <label for="rand17"></label>
+            <label for="rand18"></label>
+            <label for="rand19"></label>
+            <label for="rand20"></label>
+            <label for="rand21"></label>
+            <label for="rand22"></label>
+            <label for="rand23"></label>
+            <label for="rand24"></label>
+            <label for="rand25"></label>
+            <label for="rand26"></label>
+            <label for="rand27"></label>
+          </div>
         </div>
-        </div>
-        <!-- <input id="random" type="radio" name="target1" class="gopher gopher1"> -->
       </div>
       <div id="end" class="window">
-        <h2>Hmmm... maybe next time</h2>
+        <h2 class="lose">Hmmm... maybe next time</h2>
+        <h2 class="win-coffee">Enjoy a cup of coffee!</h2>
+        <h2 class="win-tea">Enjoy your tea!</h2>
+        <h2 class="win-espresso">Enjoy your espresso shot!</h2>
+        <div class="win-tea drawing-tea"></div>
         <p class="meta">Press F5/Command R to play again!</p>
-        <div class="gopher gopher--not-button"></div>
       </div>
-      <div id="table">
-      </div>
+      <div id="table"></div>
+      <div id="cup"></div>
       <div class="machine">
+        <div class="viewport">
           <div class="reel" id="reel1">
             <figure class="coffee-maker">coffee maker</figure>
             <figure class="teapot">teapot</figure>
-            <figure class="espresso-machine">espresso machine</figure>
-            <figure class="coffee-maker">coffee maker</figure>
+            <figure class="espresso-machine"><p>espresso machine</p></figure>
             <figure class="teapot">teapot</figure>
-            <figure class="espresso-machine">espresso machine</figure>
             <figure class="coffee-maker">coffee maker</figure>
+            <figure class="espresso-machine"><p>espresso machine</p></figure>
             <figure class="teapot">teapot</figure>
-            <figure class="espresso-machine">espresso machine</figure>
+            <figure class="coffee-maker">coffee maker</figure>
+            <figure class="espresso-machine"><p>espresso machine</p></figure>
           </div>
-          <div class="reel" id="reel2">
+          <div class="reel reel-margin" id="reel2">
+            <figure class="tea-strainer">tea strainer</figure>
+            <figure class="coffee-filter">coffee filter</figure>
+            <figure class="tamper"><p>espresso tamper</p></figure>
             <figure class="coffee-filter">coffee filter</figure>
             <figure class="tea-strainer">tea strainer</figure>
-            <figure class="tamper">tamper</figure>
+            <figure class="tamper"><p>espresso tamper</p></figure>
             <figure class="coffee-filter">coffee filter</figure>
             <figure class="tea-strainer">tea strainer</figure>
-            <figure class="tamper">tamper</figure>
-            <figure class="coffee-filter">coffee filter</figure>
-            <figure class="tea-strainer">tea strainer</figure>
-            <figure class="tamper">tamper</figure>
+            <figure class="tamper"><p>espresso tamper</p></figure>
           </div>
-          <div class="reel" id="reel3">
-            <figure class="coffee-grounds">coffee grounds</figure>
+          <div class="reel reel-margin" id="reel3">
+            <figure class="beans"><p>espresso beans</p></figure>
+            <figure class="coffee-grounds"><p>coffee grounds</p></figure>
             <figure class="tea">tea</figure>
-            <figure class="beans">beans</figure>
-            <figure class="coffee-grounds">coffee grounds</figure>
+            <figure class="coffee-grounds"><p>coffee grounds</p></figure>
+            <figure class="beans"><p>espresso beans</p></figure>
             <figure class="tea">tea</figure>
-            <figure class="beans">beans</figure>
-            <figure class="coffee-grounds">coffee grounds</figure>
+            <figure class="coffee-grounds"><p>coffee grounds</p></figure>
+            <figure class="beans"><p>espresso beans</p></figure>
             <figure class="tea">tea</figure>
-            <figure class="beans">beans</figure>
           </div>
-        <div class="upper-panel">
+        </div>
+        <div id="panel"></div>
+        <!-- <div class="upper-panel">
         </div>
         <div class="lower-panel">
-        </div>
-      </div>
-      <div class="points">
-        <div class="points-viewport">
-          <div class="points-list">
-            <input type="radio" checked name="target1">
-            <ul class="points-value">
-              <li>12</li>
-              <li>11</li>
-            </ul>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>
