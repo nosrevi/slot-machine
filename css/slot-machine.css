@@ -488,7 +488,7 @@ choices on each reel.*/
 #rand12:checked ~ .machine #reel3 {
     animation: spin1 8s linear;
 }
-#rand12:checked ~ #end h2.win-tea{
+#rand12:checked ~ #end h2.win-espresso{
     display: block;
 }
 #rand12:checked ~ #end h2.lose{
