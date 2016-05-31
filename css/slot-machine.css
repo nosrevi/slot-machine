@@ -1,8 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html,
 body {
@@ -23,6 +24,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
   z-index: 999;
   -webkit-transition: opacity 0.6s;
+     -moz-transition: opacity 0.6s;
           transition: opacity 0.6s;
 }
 .window h1,
@@ -61,10 +63,11 @@ body {
   line-height: 40px;
   cursor: pointer;
   border-bottom: 4px solid #f0e68c;
-  border-radius: 4px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -115,7 +118,9 @@ Then the start screen disappears.*/
   display: block;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   background-color: #ff0000;
   background-image: radial-gradient(circle at 33px 13px,#fff 18%,rgba(255,255,255,0) 5%);
 }
@@ -129,7 +134,10 @@ Then the start screen disappears.*/
   height: 100px;
   background-color: #fff;
   border-left: solid #a9a9a9;
-  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+     -moz-transform: rotate(-15deg);
+       -o-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 #end {
@@ -168,11 +176,14 @@ Then the start screen disappears.*/
   width: 1200px;
   height: 600px;
   background-color: #daa520;
-  border-radius: 20px;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
   -webkit-transform: perspective(600px) rotateX(45deg);
+     -moz-transform: perspective(600px) rotateX(45deg);
           transform: perspective(600px) rotateX(45deg);
   -webkit-transform-origin: center bottom;
-      -ms-transform-origin: center bottom;
+     -moz-transform-origin: center bottom;
           transform-origin: center bottom;
 }
 #cup {
@@ -183,7 +194,9 @@ Then the start screen disappears.*/
   left: 37px;
   width: 78px;
   height: 56px;
-  border-radius: 0 0 40% 40%;
+  -webkit-border-radius: 0 0 40% 40%;
+     -moz-border-radius: 0 0 40% 40%;
+          border-radius: 0 0 40% 40%;
   background-color: #fff;
   border-left: solid #a9a9a9;
 }
@@ -195,7 +208,9 @@ Then the start screen disappears.*/
   left: -16px;
   width: 57px;
   height: 38px;
-  border-radius: 44%;
+  -webkit-border-radius: 44%;
+     -moz-border-radius: 44%;
+          border-radius: 44%;
   background-image: radial-gradient(circle at 15px 18px, rgba(255,255,255,0) 18%, white 5%);
 }
 #cup:after{
@@ -217,7 +232,9 @@ Then the start screen disappears.*/
   left: 150px;
   border: solid #fff4b5 20px;
   background-color: #fff8dc;
-  border-radius: 15px 15px 0 0;
+  -webkit-border-radius: 15px 15px 0 0;
+     -moz-border-radius: 15px 15px 0 0;
+          border-radius: 15px 15px 0 0;
   transform: translateZ(250px);
   position: absolute;
 }
@@ -229,12 +246,16 @@ Then the start screen disappears.*/
   border: solid #fff4b5;
   border-width: 100px 20px;
   background-color: #fff8dc;
-  border-radius: 15px 15px 0 0;
+  -webkit-border-radius: 15px 15px 0 0;
+     -moz-border-radius: 15px 15px 0 0;
+          border-radius: 15px 15px 0 0;
   transform: perspective(600px) rotateX(31deg);
   position: absolute;
 }
 .viewport {
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
   position: relative;
   overflow: hidden;
   width: 440px;
@@ -253,7 +274,6 @@ Then the start screen disappears.*/
       float: left;
       -webkit-transform-style: preserve-3d;
          -moz-transform-style: preserve-3d;
-           -o-transform-style: preserve-3d;
               transform-style: preserve-3d;
     }
     .reel.reel-margin {
@@ -264,7 +284,9 @@ Then the start screen disappears.*/
       position: absolute;
       width: 140px;
       height: 150px;
-      border-radius: 15px;
+      -webkit-border-radius: 15px;
+         -moz-border-radius: 15px;
+              border-radius: 15px;
       line-height: 136px;
       font-weight: bold;
       color: #fff;
@@ -283,55 +305,46 @@ Then the start screen disappears.*/
     .reel figure:nth-child(1) {
       -webkit-transform: rotateX(   0deg ) translateZ( 206px );
          -moz-transform: rotateX(   0deg ) translateZ( 206px );
-           -o-transform: rotateX(   0deg ) translateZ( 206px );
               transform: rotateX(   0deg ) translateZ( 206px );
     }
     .reel figure:nth-child(2) {
       -webkit-transform: rotateX(  40deg ) translateZ( 206px );
          -moz-transform: rotateX(  40deg ) translateZ( 206px );
-           -o-transform: rotateX(  40deg ) translateZ( 206px );
               transform: rotateX(  40deg ) translateZ( 206px );
     }
     .reel figure:nth-child(3) {
       -webkit-transform: rotateX(  80deg ) translateZ( 206px );
          -moz-transform: rotateX(  80deg ) translateZ( 206px );
-           -o-transform: rotateX(  80deg ) translateZ( 206px );
               transform: rotateX(  80deg ) translateZ( 206px );
     }
     .reel figure:nth-child(4) {
       -webkit-transform: rotateX( 120deg ) translateZ( 206px );
          -moz-transform: rotateX( 120deg ) translateZ( 206px );
-           -o-transform: rotateX( 120deg ) translateZ( 206px );
               transform: rotateX( 120deg ) translateZ( 206px );
     }
     .reel figure:nth-child(5) {
       -webkit-transform: rotateX( 160deg ) translateZ( 206px );
          -moz-transform: rotateX( 160deg ) translateZ( 206px );
-           -o-transform: rotateX( 160deg ) translateZ( 206px );
               transform: rotateX( 160deg ) translateZ( 206px );
     }
     .reel figure:nth-child(6) {
       -webkit-transform: rotateX( 200deg ) translateZ( 206px );
          -moz-transform: rotateX( 200deg ) translateZ( 206px );
-           -o-transform: rotateX( 200deg ) translateZ( 206px );
               transform: rotateX( 200deg ) translateZ( 206px );
     }
     .reel figure:nth-child(7) {
       -webkit-transform: rotateX( 240deg ) translateZ( 206px );
          -moz-transform: rotateX( 240deg ) translateZ( 206px );
-           -o-transform: rotateX( 240deg ) translateZ( 206px );
               transform: rotateX( 240deg ) translateZ( 206px );
     }
     .reel figure:nth-child(8) {
       -webkit-transform: rotateX( 280deg ) translateZ( 206px );
          -moz-transform: rotateX( 280deg ) translateZ( 206px );
-           -o-transform: rotateX( 280deg ) translateZ( 206px );
               transform: rotateX( 280deg ) translateZ( 206px );
     }
     .reel figure:nth-child(9) {
       -webkit-transform: rotateX( 320deg ) translateZ( 206px );
          -moz-transform: rotateX( 320deg ) translateZ( 206px );
-           -o-transform: rotateX( 320deg ) translateZ( 206px );
               transform: rotateX( 320deg ) translateZ( 206px );
     }
 
@@ -368,125 +381,161 @@ Then the start screen disappears.*/
 which maps to 27 checkboxes. Spin1, 2 and 3 maps to 3 different
 choices on each reel.*/
 #rand1:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand1:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand1:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand2:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand2:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand2:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand3:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand3:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand3:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand4:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand4:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand4:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 #rand5:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand5:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand5:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand6:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand6:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand6:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand7:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand7:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand7:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 #rand8:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand8:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand8:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand9:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand9:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand9:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 #rand10:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand10:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand10:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand11:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand11:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand11:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 /*winner - espresso*/
 
 #rand12:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand12:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand12:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand12:checked ~ #end h2.win-espresso{
     display: block;
@@ -496,74 +545,95 @@ choices on each reel.*/
 }
 
 #rand13:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand13:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand13:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand14:checked ~ .machine #reel1 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand14:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand14:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand15:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand15:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand15:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 #rand16:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand16:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand16:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand17:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand17:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand17:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand18:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand18:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand18:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 /*winner - coffee*/
 #rand19:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand19:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand19:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand19:checked ~ #end h2.win-coffee{
     display: block;
@@ -573,75 +643,96 @@ choices on each reel.*/
 }
 
 #rand20:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand20:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand20:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand21:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand21:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand21:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 #rand22:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand22:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand22:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 #rand23:checked ~ .machine #reel1 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand23:checked ~ .machine #reel2 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand23:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 
 #rand24:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand24:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand24:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
 #rand25:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand25:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand25:checked ~ .machine #reel3 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 
 /*winner - tea*/
 
 #rand26:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand26:checked ~ .machine #reel2 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 #rand26:checked ~ .machine #reel3 {
-    animation: spin3 8s linear;
+  -webkit-animation: spin3 8s linear;
+          animation: spin3 8s linear;
 }
 #rand26:checked ~ #end h2.win-tea{
     display: block;
@@ -651,15 +742,32 @@ choices on each reel.*/
 }
 
 #rand27:checked ~ .machine #reel1 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand27:checked ~ .machine #reel2 {
-    animation: spin2 8s linear;
+  -webkit-animation: spin2 8s linear;
+          animation: spin2 8s linear;
 }
 #rand27:checked ~ .machine #reel3 {
-    animation: spin1 8s linear;
+  -webkit-animation: spin1 8s linear;
+          animation: spin1 8s linear;
 }
 
+@-webkit-keyframes spin1 {
+  0% {
+    transform: rotateX(0deg);
+  }
+  60% {
+    transform: rotateX(-640deg);
+  }
+  80% {
+    transform: rotateX(-720deg);
+  }
+  100% {
+    transform: rotateX(-720deg);
+  }
+}
 @keyframes spin1 {
   0% {
     transform: rotateX(0deg);
@@ -675,6 +783,20 @@ choices on each reel.*/
   }
 }
 
+@-webkit-keyframes spin2 {
+  0% {
+    transform: rotateX(-40deg);
+  }
+  60% {
+    transform: rotateX(600deg);
+  }
+  80% {
+    transform: rotateX(680deg);
+  }
+  100% {
+    transform: rotateX(680deg);
+  }
+}
 @keyframes spin2 {
   0% {
     transform: rotateX(-40deg);
@@ -690,6 +812,20 @@ choices on each reel.*/
   }
 }
 
+@-webkit-keyframes spin3 {
+  0% {
+    transform: rotateX(40deg);
+  }
+  60% {
+    transform: rotateX(-600deg);
+  }
+  80% {
+    transform: rotateX(-680deg);
+  }
+  100% {
+    transform: rotateX(-680deg);
+  }
+}
 @keyframes spin3 {
   0% {
     transform: rotateX(40deg);
