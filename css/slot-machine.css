@@ -235,7 +235,8 @@ Then the start screen disappears.*/
   -webkit-border-radius: 15px 15px 0 0;
      -moz-border-radius: 15px 15px 0 0;
           border-radius: 15px 15px 0 0;
-  transform: translateZ(250px);
+  -webkit-transform: translateZ(250px);
+          transform: translateZ(250px);
   position: absolute;
 }
 #panel {
@@ -249,7 +250,8 @@ Then the start screen disappears.*/
   -webkit-border-radius: 15px 15px 0 0;
      -moz-border-radius: 15px 15px 0 0;
           border-radius: 15px 15px 0 0;
-  transform: perspective(600px) rotateX(31deg);
+  -webkit-transform: perspective(600px) rotateX(31deg);
+          transform: perspective(600px) rotateX(31deg);
   position: absolute;
 }
 .viewport {
@@ -756,16 +758,16 @@ choices on each reel.*/
 
 @-webkit-keyframes spin1 {
   0% {
-    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
   }
   60% {
-    transform: rotateX(-640deg);
+    -webkit-transform: rotateX(-640deg);
   }
   80% {
-    transform: rotateX(-720deg);
+    -webkit-transform: rotateX(-720deg);
   }
   100% {
-    transform: rotateX(-720deg);
+    -webkit-transform: rotateX(-720deg);
   }
 }
 @keyframes spin1 {
@@ -785,16 +787,16 @@ choices on each reel.*/
 
 @-webkit-keyframes spin2 {
   0% {
-    transform: rotateX(-40deg);
+    -webkit-transform: rotateX(-40deg);
   }
   60% {
-    transform: rotateX(600deg);
+    -webkit-transform: rotateX(600deg);
   }
   80% {
-    transform: rotateX(680deg);
+    -webkit-transform: rotateX(680deg);
   }
   100% {
-    transform: rotateX(680deg);
+    -webkit-transform: rotateX(680deg);
   }
 }
 @keyframes spin2 {
@@ -814,16 +816,16 @@ choices on each reel.*/
 
 @-webkit-keyframes spin3 {
   0% {
-    transform: rotateX(40deg);
+    -webkit-transform: rotateX(40deg);
   }
   60% {
-    transform: rotateX(-600deg);
+    -webkit-transform: rotateX(-600deg);
   }
   80% {
-    transform: rotateX(-680deg);
+    -webkit-transform: rotateX(-680deg);
   }
   100% {
-    transform: rotateX(-680deg);
+    -webkit-transform: rotateX(-680deg);
   }
 }
 @keyframes spin3 {
